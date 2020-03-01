@@ -1,0 +1,40 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Responses</title>
+</head>
+<body>
+    <h2>
+        here is the list of people attending the party
+    </h2>
+    <table>
+        <thread>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+            </tr>
+        </thread>
+        <tbody>
+            @* Processes each guest response object that the action method passes to the view using View method. 
+                Each guest response object generates a tr element that contains td elements populated with the 
+                value of an object property. Unlike C# code the Razor foreach loop includes HTML data and processes the request.*@
+            @foreach (PartyInvites.Models.Guest_Response r in Model)
+             {
+                <tr>
+                    <td>@r.Name</td>
+                    <td>@r.Email</td>
+                    <td>@r.Phone</td>
+                </tr>
+             }
+        </tbody>
+    </table>
+</body>
+</html>

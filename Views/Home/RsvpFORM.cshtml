@@ -1,0 +1,44 @@
+﻿@model PartyInvites.Models.Guest_Response 
+    @*This is a Razor expression used to create a strongly typed view that is used to render a specific model type*@
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>RsvpForm</title>
+</head>
+<body>
+    <div>
+        This is my RsvpForm.cshtml View. Please pay attention to it.
+    </div>
+    <form asp-action="RsvpForm" method="post">
+        <div asp-validation-summary="All"></div>
+        <p>
+            <label asp-for="Name"> Your name: </label>
+            <input asp-for="Name" />
+        </p>
+        <p>
+            <label asp-for="Email"> Your email: </label>
+            <input asp-for="Email" />
+        </p>
+        <p>
+            <label asp-for="Phone"> Your phone: </label>
+            <input asp-for="Phone" />
+        </p>
+        <p>
+            <label> Will you attend?></label>
+            <select asp-for="WillAttend">
+                <option value="">Choose an option</option>
+                <option value="true">Yes, I'll be there with bells on! </option>
+                <option value="false">No, I can't come because my wife said No!!</option>
+            </select>
+        </p>
+        <button type="submit">Submit RSVP</button>
+    </form>
+</body>
+</html>
